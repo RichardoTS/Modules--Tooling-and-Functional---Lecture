@@ -105,4 +105,7 @@ class Person {
 const richard = new Person("Richard");
 console.log("Richard" ?? null);
 
-import "core-js/stable";
+// import "core-js/stable";
+
+// Polyfilling async functions
+// import "regenerator-runtime/runtime";

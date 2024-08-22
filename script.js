@@ -3,7 +3,7 @@
 // addToCart("bread", 5);
 // console.log(price, tq);
 
-// console.log("Importing module");
+console.log("Importing module");
 
 // import * as ShoppingCart from "./shoppingCart.js";
 // ShoppingCart.addToCart("bread", 5);
@@ -12,12 +12,12 @@
 // import add, { addToCart, totalPrice as price, tq } from "./shoppingCart.js";
 // console.log(price);
 
-// import add, { cart } from "./shoppingCart.js";
-// add("pizza", 2);
-// add("bread", 5);
-// add("apples", 4);
+import add, { cart } from "./shoppingCart.js";
+add("pizza", 2);
+add("bread", 5);
+add("apples", 4);
 
-// console.log(cart);
+console.log(cart);
 
 //////////////////////////////
 // Top-Level await
@@ -74,7 +74,8 @@
 // ShoppingCart2.addToCart("pizza", 2);
 // console.log(ShoppingCart2);
 
-import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+// import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+import cloneDeep from "lodash-es";
 
 const state = {
   cart: [
@@ -89,3 +90,19 @@ state.user.loggedIn = false;
 console.log(stateClone);
 
 console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+class Person {
+  greeting = "Hey";
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, ${this.name}`);
+  }
+}
+const richard = new Person("Richard");
+console.log("Richard" ?? null);
+
+import "core-js/stable";
